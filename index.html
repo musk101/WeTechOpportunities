@@ -16,6 +16,7 @@
     
     <!-- FontAwesome JS-->
     <script defer src="assets/fontawesome/js/all.min.js"></script>
+	<script src="https://code.jquery.com/jquery-3.6.0.slim.min.js" integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI=" crossorigin="anonymous"></script>
 
     <!-- Theme CSS -->  
     <link id="theme-style" rel="stylesheet" href="assets/css/theme.css">
@@ -200,7 +201,7 @@
 					<div class="container py-5">
 						<h2 class="section-heading text-center mb-3">Below are all the Communities for Women In Technology.</h2>
 						<div class="section-intro single-col-max mx-auto text-center mb-5">All the opportunities are mentioned below! Don't forget to fill before the due date!</div>
-						<div class="row text-center">
+						<div  class="row text-center">
 							<div class="item col-12 col-md-6 col-lg-4">
 								<div class="item-inner p-3 p-lg-4">
 									<div class="item-header mb-3">
@@ -333,11 +334,12 @@
 									</div><!--//item-desc-->
 								</div><!--//item-inner-->
 							</div><!--//item-->
+							
 							<section id="benefits-section" class="benefits-section theme-bg-light-gradient py-5">
 								<div class="container py-5">
 									<h2 class="section-heading text-center mb-3">Below are all the opportunities available.</h2>
 									<div class="section-intro single-col-max mx-auto text-center mb-5">All the opportunities are mentioned below! Don't forget to fill before the due date!</div>
-									<div class="row text-center">
+									<div id="addEventsSection" class="row text-center">
 										<div class="item col-12 col-md-6 col-lg-4">
 											<div class="item-inner p-3 p-lg-4">
 												<div class="item-header mb-3">
@@ -437,21 +439,46 @@
 												</div><!--//item-desc-->
 											</div><!--//item-inner-->
 										</div><!--//item-->
+
+										
 										
     </section><!--//benefits-section-->
     
    
-    <footer class="footer">
+  
+	<script>
+		let events = ["Google Codejam io for Women", "Google STEP Internship", "Girlscript Summer of Code", "Google Summer of Code", "She Codes by Indeed", "Outreachy", "Goldman Sachs Women Possibilities Summit: Finance", "Tech Women at Intuit", "Women Who Code: Delhi", "Society of Women Engineers India", "DevelopHER", "LinkedIn Wintathon", "Adobe Codiva", "Visa Code Your Way", "Microsoft Codess", "Uber She++", "Flipkart Girls Wanna Code", "LinkedIn CoachIn Program"];
+		let links = ["https://codingcompetitions.withgoogle.com/codejamio", "https://buildyourfuture.withgoogle.com/programs/step/", "https://www.gssoc.tech/", "https://summerofcode.withgoogle.com/", "https://xathon.mettl.com/event/shecodesindeed", "https://www.outreachy.org/", "https://www.goldmansachs.com/careers/students/programs/india/womens-possibilities-summit-finance.html", "https://www.intuit.com/careers/programs/tech-women-at-intuit/", "https://www.womenwhocode.com/delhi", "https://india.swe.org/", "https://developher.com/", "https://wintathon2020.splashthat.com/", "https://www.firstnaukri.com/careers/customised/landingpage/adobe/codiva/index.html", "https://assessment.hackerearth.com/challenges/hiring/visa-code-your-way-2019/", "https://www.codess.net/", ""]
+		let card = (name, url) => `<div class="item col-12 col-md-6 col-lg-4">
+											<div class="item-inner p-3 p-lg-4">
+												<div class="item-header mb-3">
+													<div class="item-icon"><i class="fab fa-angular"></i></div>
+													<h3 class="item-heading"><a href="${url}">${name}</a></h3>
+												</div><!--//item-heading-->
+												<div class="item-desc">
+													List one of your book's benefits here. Orci varius natoque penatibus et magnis dis parturient montes. 
+												</div><!--//item-desc-->
+											</div><!--//item-inner-->
+										</div>`;
 
-	    <div class="footer-bottom text-center py-5">
+		$(document).ready(()=> {
+			for (let e in events)
+			$('div#addEventsSection').append(card(events[e], links[e]))
+		})
 
-	        <!--/* This template is free as long as you keep the footer attribution link. If you'd like to use the template without the attribution link, you can buy the commercial license via our website: themes.3rdwavemedia.com Thank you for your support. :) */-->
-            <small class="copyright">Made with <i class="fas fa-heart" style="color: #fb866a;"></i> by <a class="theme-link" target="_blank">Muskan</a> 
- 
-	    </div>
-	    
-    </footer>
-       
+
+	</script>
+         <footer class="footer">
+
+			<div class="footer-bottom text-center py-5">
+	
+				<!--/* This template is free as long as you keep the footer attribution link. If you'd like to use the template without the attribution link, you can buy the commercial license via our website: themes.3rdwavemedia.com Thank you for your support. :) */-->
+				<small class="copyright">Made with <i class="fas fa-heart" style="color: #fb866a;"></i> by <a class="theme-link" target="_blank">Muskan</a> 
+	 
+			</div>
+			
+		</footer>
+	
     <!-- Javascript -->          
     <script src="assets/plugins/jquery-3.4.1.min.js"></script>
     <script src="assets/plugins/popper.min.js"></script>
